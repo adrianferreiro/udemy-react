@@ -13,9 +13,7 @@ import PropTypes from 'prop-types';
     <>
         {/* <h1> { sumar(8,7) } </h1> */}
         {/* <h1> {props.title} </h1> */}
-        <h1> {title} </h1>
-        
-
+        <h1 data-testid='test-title'> {title} </h1>
         <p>{subtitle}</p>
     </>
   )
