@@ -1,33 +1,32 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
+
+import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid =  ({category}) => {
   //useEffect:
   //* primer argumento es la función que queremos ejecutar una solavez
   //* segundo argumento es la lista [] de condiciones que se deben cumplir para que se ejecute la función
 
-  const [images, setImages] = useState([]);  
-
-  const getImages = async () => {
-    const newImages = await getGifs(category);
-    setImages(newImages);
-  }
-
-  useEffect  ( ()  => {
-    getImages();
-  }, [])
+  //customHook
+  const {images, isLoading} = useFetchGifs(category);
+  
   return (
   <>
       <h3>{category}</h3>
-      <ol>
+      <div className="card-grid">
 
         {
-          images.map(({id, title}) => (
-            <li key={id}> {title} </li>
+          images.map((image) => (
+            <GifItem
+              key={image.id}
+              // title={image.title}
+              // url={image.url}
+              {... image}
+            />
           ))
 
         }
-      </ol>
+      </div>
   </>
   )
 }
