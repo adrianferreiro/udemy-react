@@ -18,6 +18,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   //para volver a restringir ejecutamos
   //Set-ExecutionPolicy Restricted
 
+
+//Netlify.com 
+//usamos para desplegar nuestra app y probar en producción
+//inicio sesión con mi cuenta de github para el ejemplo
+//tengo que ejecutar
+//npm run build
+//esto me crea la carpeta "dist"
+//y esa carpeta creada la tengo que arrastar a la web netlify.com en la parte de "sites" para desplegar
+
   <React.StrictMode>
     <GifExpertApp/>
   </React.StrictMode>,
