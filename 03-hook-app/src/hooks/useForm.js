@@ -13,9 +13,15 @@ export const useForm = (initialForm = {}) => {
         });
     }
 
+    const onResetForm = ()=>{
+        setFormState(initialForm);
+        
+    }
+
     return {
         ...formState, //para exportar usuario correo y pass
         formState,
         onInputChange,
+        onResetForm,
     }
 }
