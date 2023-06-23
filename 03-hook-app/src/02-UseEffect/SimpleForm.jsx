@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
     const [formState, setFormState] = useState({
@@ -40,16 +41,16 @@ export const SimpleForm = () => {
     //REACT recomienda hacer un useEffect por cada efecto secundario que queremos disparar
 
     useEffect(()=>{
-        console.log('useEffect called!');
+        // console.log('useEffect called!');
     }, []);//vacío => se dispara una sola vez, cuando se randeriza el componente
     
     useEffect(()=>{
-        console.log('formState change!');
+        // console.log('formState change!');
     }, [formState]);//en éste caso se dispara cada vez que haya un cambio en el formState
     
     
     useEffect(()=>{
-        console.log('email change!');
+        // console.log('email change!');
     }, [email]);//se dispara cuando cambia el email
     //si cambiamos el email, tambien cambia el formstate así que se ejecutan los dos
     
@@ -78,6 +79,10 @@ export const SimpleForm = () => {
             value={email}
             onChange={onInputChange}
         />
+
+        {
+            (username === 'strider2') && <Message/>
+        }
     </>
    )
 }
