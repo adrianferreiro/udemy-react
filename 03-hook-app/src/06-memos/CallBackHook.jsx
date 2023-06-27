@@ -8,8 +8,8 @@ export const CallBackHook = () => {
     //useCallback es como el memo pero se utiliza para memorizar funciones que solamente se va a volver a ejecutar cuando
     //algo cambie
     const incrementFather = useCallback(
-      () => {
-        setCounter((value)=> value + 1);
+      (value) => {
+        setCounter((c)=> c + value); //agregamos al ejemplo anterior pasarle un argumento a ésta función
       },
       [],
     )

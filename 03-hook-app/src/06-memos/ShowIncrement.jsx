@@ -8,7 +8,7 @@ export const ShowIncrement = ({increment}) => {
     <button 
         className="btn btn-primary"
         onClick={()=> {
-            increment();
+            increment(5);//acá estamos llamando a la función de CallbackChook.jsx
         }}
     >
         Incrementar
