@@ -2,8 +2,9 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import { CallBackHook } from './06-memos/CallBackHook';
-import { Padre } from './07-tarea-memo/Padre';
-import './08-useReducer/intro-reducer';
+// import { Padre } from './07-tarea-memo/Padre';
+// import './08-useReducer/intro-reducer';
+import { TodoApp } from './08-useReducer/TodoApp';
 // import { Memorize } from './06-memos/Memorize';
 // import { MemoHook } from './06-memos/MemoHook';
 // import { FormWithCustomForm } from './02-UseEffect/FormWithCustomHook';
@@ -15,9 +16,9 @@ import './08-useReducer/intro-reducer';
 // import { CounterApp } from './01-UseState/CounterApp';
 // import { HooksApp } from './HooksApp';
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   // <React.StrictMode>
-//   <Padre/>
-//   // </React.StrictMode>,
-// )
+ReactDOM.createRoot(document.getElementById('root')).render(
+  // <React.StrictMode>
+  <TodoApp/>
+  // </React.StrictMode>,
+)
 // https://api.breakingbadquotes.xyz/v1/quotes/
