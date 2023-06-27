@@ -1,7 +1,8 @@
 // import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { CallBackHook } from './06-memos/CallBackHook';
+// import { CallBackHook } from './06-memos/CallBackHook';
+import { Padre } from './07-tarea-memo/Padre';
 // import { Memorize } from './06-memos/Memorize';
 // import { MemoHook } from './06-memos/MemoHook';
 // import { FormWithCustomForm } from './02-UseEffect/FormWithCustomHook';
@@ -15,7 +16,7 @@ import { CallBackHook } from './06-memos/CallBackHook';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <CallBackHook/>
+  <Padre/>
   // </React.StrictMode>,
 )
 // https://api.breakingbadquotes.xyz/v1/quotes/
