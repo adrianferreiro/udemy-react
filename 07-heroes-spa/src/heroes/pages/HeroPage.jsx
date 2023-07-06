@@ -1,5 +1,6 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { getHeroById } from "../helpers";
+import { useMemo } from "react";
 
 export const HeroPage = () => {
 
@@ -7,7 +8,12 @@ export const HeroPage = () => {
   // que pusimos como comodin en HeroesRoutes.jsx
   const { id } = useParams();
 
-  const hero = getHeroById(id);
+  //este es un componente que se puede volver a redibujar así que vamos a usar un useMemo
+  //se puede redibujar por ej por un cambio en el componente padre que randeriza éste elemento
+  //entonces tenemos que ver siempre que cuando llamamos una función directamente, memorizar sus valores
+  //o memorizar las funciones en caso de considerarlo necesario
+  //useMemo para memorizar valores - useCallback para memorizar funciones
+  const hero = useMemo( ()=> getHeroById( id ), [ id ]);//se dispara solamente si cambia el valor del id
 
   const navigate = useNavigate();
 
