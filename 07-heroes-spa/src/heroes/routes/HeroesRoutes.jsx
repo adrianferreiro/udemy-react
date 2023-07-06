@@ -13,7 +13,9 @@ export const HeroesRoutes = () => {
                 <Route path="dc" element={<DcPage/>} />
                 
                 <Route path="search" element={<SearchPage/>} />
-                <Route path="hero" element={<HeroPage/>} />
+                {/* el "id" que pasamos a la url está en el contexto ya que usamos el hook useParams de react-router-dom en HeroPage*/}
+                {/* depende del nombre que le ponesmos acá .. es como voy a obtener cuando quiero leer la url */}
+                <Route path="hero/:id" element={<HeroPage/>} />
 
 
                 <Route path="/" element={<Navigate to={"marvel"} />} />
