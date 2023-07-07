@@ -1,7 +1,22 @@
-import { useForm } from "../../hooks/useForm"
-import { HeroCard } from "../components"
+import { useLocation, useNavigate } from "react-router-dom";
+import  queryString from 'query-string';
+import { useForm } from "../../hooks/useForm"; 
+import { HeroCard } from "../components";
 
 export const SearchPage = () => {
+
+  const navigate = useNavigate();
+  //usamos useLocation para obtener los parámetros de la query
+  //para ver hacemos consolelog de {location}
+  //con location obtenemos la información de la localización en la que nos encontramos
+  const location = useLocation();
+  // console.log({location});
+
+  //instalamos -- npm install query-string
+  // const query = queryString.parse(location.search); 
+  //si hacemos un console log podemos ver como separa los parámetros enviados por la url
+  // console.log(query);
+  const {q= ''} = queryString.parse(location.search);
 
   const { searchText, onInputChange } = useForm({
     searchText: ''
@@ -10,7 +25,7 @@ export const SearchPage = () => {
   const onSearchSubmit = (event)=>{
     event.preventDefault(); //para evitar que haga un full refresh
     if(searchText.trim().length <= 1) return
-    console.log({searchText});
+    navigate(`?q=${searchText}`)
   }
 
   return (
@@ -49,7 +64,7 @@ export const SearchPage = () => {
             </div>
 
             <div className="alert alert-danger" >
-                No hero with <b>ABC</b> 
+                No hero with <b> {q} </b> 
             </div>
 
             {/* <HeroCard/> */}
