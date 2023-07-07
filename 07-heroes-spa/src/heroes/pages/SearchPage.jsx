@@ -22,6 +22,12 @@ export const SearchPage = () => {
   //vamos a realizar la búsqueda una vez que tenemos los query parameters
   const heroes = getHeroesByName(q);
 
+  //vamosa a crear una condición para mostrar un mensaje u otro al realizar la búsqueda
+  //const showSearch = (q.length === 0) ? true : false;
+  const showSearch = (q.length === 0); //está implícito el true o false así que no hace falta poner
+  const showError = (q.length > 0) && heroes.length === 0;
+
+
   const { searchText, onInputChange } = useForm({
     searchText: q // le asignamos el parámetro envíado para que no se borre cuando realizamos la búsqueda
   });
@@ -63,14 +69,23 @@ export const SearchPage = () => {
             <h4>Result</h4>
             <hr />
 
-            {
+            {/* {
               (q === '') 
               ? <div className="alert alert-primary" >Search a hero</div>
               : (heroes.length === 0) 
                 ? <div className="alert alert-danger" >No hero with <b> {q} </b></div>
                 : <></>
+            } */}
 
-            }
+            <div className="alert alert-primary animate__animated animate__fadeIn" style={{display: showSearch ? '' : 'none'}} >
+              Search a hero
+            </div>
+
+            <div className="alert alert-danger animate__animated animate__fadeIn" style={{display: showError ? '' : 'none'}} >
+              No hero with <b> {q} 
+            </b></div>
+
+
 
             {
               heroes.map( hero => (
