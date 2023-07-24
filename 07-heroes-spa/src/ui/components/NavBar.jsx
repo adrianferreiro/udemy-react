@@ -8,10 +8,13 @@ export const Navbar = () => {
     //solo los hooks que vienen de react son llamados hooks, los de terceros son customHooks
     const navigate = useNavigate();//custom hook
 
-    const {user} = useContext(AuthContext);
+    const {user, logout} = useContext(AuthContext);
     console.log(user);
 
     const onLogout = ()=> {
+
+        logout();
+
         navigate('/login', {
             replace: true
         });

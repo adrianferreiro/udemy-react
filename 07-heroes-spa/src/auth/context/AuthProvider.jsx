@@ -38,11 +38,18 @@ export const AuthProvider = ({children}) => {
     dispatch(action);
   }
 
+  const logout = () => {
+    localStorage.removeItem('user');
+    const action = { type: types.logout };
+    dispatch(action); //espera la acción para limpiarlo
+  }
 
-  return (
+
+  return (  
     <AuthContext.Provider value={{
       ...authState, //exponemos el estado para que sea accesible para el resto de la app
-      login: login //exponemos la funcion
+      login: login,
+      logout: logout, //exponemos la funcion
     }}>
         {children}
     </AuthContext.Provider>
