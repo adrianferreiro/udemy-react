@@ -3,6 +3,7 @@ import { NavBar, SideBar } from "../components";
 
 const drawerWidth = 280;
 
+// eslint-disable-next-line react/prop-types
 export const JournalLayout = ({children}) => {
   return (
     <Box sx={{display: 'flex'}} >
@@ -19,6 +20,7 @@ export const JournalLayout = ({children}) => {
         >
             {/* Toolbar */}
             <Toolbar/>
+            {/* cuando agregamos toolbar  */}
 
             {children}
         </Box>

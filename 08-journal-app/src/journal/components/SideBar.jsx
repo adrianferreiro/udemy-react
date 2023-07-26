@@ -1,6 +1,7 @@
 import { TurnedInNot } from "@mui/icons-material"
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material"
 
+// eslint-disable-next-line react/prop-types
 export const SideBar = ({drawerWidth = 240}) => {
   return (
     <Box
