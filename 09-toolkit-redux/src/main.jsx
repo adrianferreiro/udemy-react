@@ -2,9 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  // Creamos el archivo store.js y envolvemos nuestra app en provider importado de react-redux
+  // El provider espera el parámetro store y le pasamos el que creamos
+  // Creamos los Slices: 
+  // Slice: es una función que recibe un objeto, ese objeto tiene nombre, estado inicial y reducers
   <React.StrictMode>
-    <App />
+    <Provider store={store} >
+      <App />
+    </Provider>
   </React.StrictMode>,
 )
