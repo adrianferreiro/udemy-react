@@ -7,7 +7,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'counter',
   initialState:{
-    counter: 10
+    counter: 10,
   },
   reducers: {
     increment: (state) => {
@@ -17,8 +17,15 @@ export const counterSlice = createSlice({
       // immutable state based off those changes
       state.counter += 1
     },
+    incrementBy: (state, action) =>{
+      // recibimos el action que puede ser un valor o un objeto. En éste caso es un número
+      state.counter += action.payload;
+    },
+    decrement: (state) => {
+      state.counter -=1
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment } = counterSlice.actions
+export const { increment, incrementBy, decrement } = counterSlice.actions
