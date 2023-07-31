@@ -14,6 +14,34 @@ function App() {
   // Instalamos los paquetes para REDUX
   // npm install @reduxjs/toolkit
   // npm install react-redux
+
+  //snippet para el cascarón de Slice
+  //ctrl + shift + P
+  //cmd + shift + P
+  //buscamos user snippets
+  // "Crear un Slice de Redux": {
+	// 	"prefix": "redux-slice",
+	// 	"body": [
+	// 		"import { createSlice } from '@reduxjs/toolkit';",
+	// 		"",
+	// 		"export const ${1:template}Slice = createSlice({",
+	// 		"    name: 'name',",
+	// 		"    initialState: {",
+	// 		"        counter: 10",
+	// 		"    },",
+	// 		"    reducers: {",
+	// 		"        increment: (state, /* action */ ) => {",
+	// 		"            state.counter += 1;",
+	// 		"        },",
+	// 		"    }",
+	// 		"});",
+
+
+	// 		"export const { increment } = ${1:template}Slice.actions;"
+	// 	],
+	// 	"description": "Crear un Slice de Redux"
+	// }
+
   return (
     <>
       <div>
