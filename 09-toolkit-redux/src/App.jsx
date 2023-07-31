@@ -25,7 +25,7 @@ function App() {
 	// 		"import { createSlice } from '@reduxjs/toolkit';",
 	// 		"",
 	// 		"export const ${1:template}Slice = createSlice({",
-	// 		"    name: 'name',",
+	// 		"    name: '${1:template}',",
 	// 		"    initialState: {",
 	// 		"        counter: 10",
 	// 		"    },",
