@@ -12,10 +12,13 @@ export const todosApi = createApi({
         //tomamos la url y concatenamos /todos
         getTodos: builder.query({
             query: () => '/todos'
+        }),
+        getTodo: builder.query({
+            query: (todoId) => `/todos/${todoId}`
         })
 
     })
 
 })
 
-export const { useGetTodosQuery } = todosApi;
+export const { useGetTodosQuery, useGetTodoQuery } = todosApi;
