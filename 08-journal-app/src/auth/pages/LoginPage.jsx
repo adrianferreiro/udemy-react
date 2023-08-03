@@ -1,12 +1,19 @@
+import { useMemo } from 'react'
 import {Link as RouterLink} from 'react-router-dom'
 import { Google } from "@mui/icons-material"
 import { Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { StartGoogleSignInc, checkingAuthentication } from '../../store/auth/thunks'
 
 export const LoginPage = () => {
+
+  const { status } = useSelector(state => state.auth);
+
+  //vamos a memorizar el status para deshabilitar botones
+  //siempre se va a obtener el valor cuando cambie el status
+  const isAuthenticating = useMemo( ()=> status === 'checking', [status] );
 
   const {email, password, onInputChange} = useForm({
     email: 'adriferreiro.88@gmail.com',
@@ -64,12 +71,13 @@ export const LoginPage = () => {
 
             <Grid container spacing={2} sx={{mb: 2, mt: 1}}> 
               <Grid item xs={12} sm={6} >
-                <Button type="submit"  variant="contained" fullWidth >
+                <Button disabled= { isAuthenticating }  type="submit"  variant="contained" fullWidth >
                   Login
                   </Button>
               </Grid>
               <Grid item xs={12} sm={6} >
                 <Button
+                    disabled= { isAuthenticating }
                     variant="contained"
                     fullWidth
                     onClick={onGoogleSignIn}
