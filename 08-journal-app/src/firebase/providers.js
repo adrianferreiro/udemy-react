@@ -69,7 +69,8 @@ export const registerUserWithEmailPassword = async ( { email, password, displayN
         }
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
+        //acá podemos ver el status code del error para personalizar nuestros mensajes de error
         return {ok: false, errorMessage: error.message}
     }
 }
