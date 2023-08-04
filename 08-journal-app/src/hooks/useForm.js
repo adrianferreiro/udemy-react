@@ -51,7 +51,7 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         }
         //ahora establecemos que éste objeto va a ser el nuevo valor del setFormValidation
         setformValidation( formCheckedValues );
-        console.log(formCheckedValues);
+        // console.log(formCheckedValues);
     }
 
     return {
