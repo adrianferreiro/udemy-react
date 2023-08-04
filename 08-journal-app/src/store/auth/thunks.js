@@ -32,8 +32,13 @@ export const startCreatingUserWithEmailPassword = ({ email, password, displayNam
     return async(dispatch) =>{
 
         dispatch(checkingCredentials()); //cambiamos el estado para mostrar el loading
-        const resp = await  registerUserWithEmailPassword({ email, password, displayName });
-        console.log(resp);
+        // const resp = await  registerUserWithEmailPassword({ email, password, displayName });
+        const {ok, uid, photoURL, errorMessage} = await  registerUserWithEmailPassword({ email, password, displayName });
+        // console.log(resp);
+        if(!ok) return dispatch(logout({errorMessage}));//error
+
+        //si todo sale bien .. logueamos al usuario
+        dispatch(login({uid, displayName, email, photoURL}));
     }
 
 }
