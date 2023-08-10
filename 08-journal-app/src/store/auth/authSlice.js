@@ -18,7 +18,7 @@ export const authSlice = createSlice({
             state.email= payload.email;
             state.displayName= payload.displayName;
             state.photoURL= payload.photoURL;
-            state.errorMessage= payload.errorMessage;
+            state.errorMessage= payload.errorMessage; //con el signo de pregunta le decimos que muestre el mensaje de error solamente si viene el payload
             
         },
         logout: ( state, {payload} ) => {
@@ -27,7 +27,7 @@ export const authSlice = createSlice({
             state.email= null;
             state.displayName= null;
             state.photoURL= null;
-            state.errorMessage= payload.errorMessage;
+            state.errorMessage= payload?.errorMessage;
 
 
         },
