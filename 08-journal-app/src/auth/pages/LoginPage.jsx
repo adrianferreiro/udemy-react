@@ -38,7 +38,7 @@ export const LoginPage = () => {
 
   return (
       <AuthLayout title='Login'>
-        <form onSubmit={onSubmit} >
+        <form onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
           {/* container porque va a tener mas de un grid item */}
           <Grid container>
             {/* como boostrap tenemos la pantalla dividida en 12 posiciones */}
